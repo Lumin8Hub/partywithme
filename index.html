@@ -3,28 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- GitHub Pages SPA: restore path from 404 redirect query string -->
-    <script>
-      (function() {
-        var params = new URLSearchParams(window.location.search);
-        var p = params.get('p');
-        if (p) {
-          var h = params.get('h') || '';
-          var search = p.includes('?') ? p.split('?').slice(1).join('?') : '';
-          var path = p.split('?')[0];
-          window.history.replaceState(
-            null, null,
-            path + (search ? '?' + search : '') + h
-          );
-        }
-      })();
-    </script>
     <meta property="og:title" content="Party With Me — We bring the party to you" />
     <meta property="og:description" content="Slime, unicorns, science, glitter and games — fully-led birthday parties in your own space for kids 5–12. You relax. We bring the fun (and clean it all up). Toronto & Greater Boston." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/images/party-hula.jpg" />
+    <meta property="og:image" content="https://lumin8hub.github.io/partywithme/images/party-hula.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="/images/party-hula.jpg" />
+    <meta name="twitter:image" content="https://lumin8hub.github.io/partywithme/images/party-hula.jpg" />
     <meta name="twitter:title" content="Party With Me — We bring the party to you" />
     <meta name="twitter:description" content="Fully-led kids' birthday parties in your own space. Toronto & Greater Boston. Parties from $320." />
     <meta name="description" content="Party With Me brings fully-led, mess-free kids' birthday parties to your space — slime, unicorns, science, games and more for ages 5–12. Serving the GTA & Greater Boston. Parties from $320." />
