@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 37% 16%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 37% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 37% 16%;
+
+    --primary: 211 65% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 331 100% 72%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 32 100% 97%;
+    --muted-foreground: 222 16% 46%;
+
+    --accent: 43 100% 62%;
+    --accent-foreground: 224 37% 16%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 222 24% 91%;
+    --input: 222 24% 88%;
+    --ring: 211 65% 50%;
+
+    --radius: 1.25rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-display;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: hsl(var(--secondary) / 0.35);
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-display font-semibold text-sm uppercase tracking-[0.14em] text-party-blue;
+  }
+
+  .headline {
+    @apply font-display font-bold tracking-tight leading-[1.05] text-party-navy;
+    font-size: clamp(2.1rem, 5vw, 3.4rem);
+  }
+
+  .subheadline {
+    @apply font-body text-lg md:text-xl text-muted-foreground leading-relaxed;
+  }
+
+  /* Sticker-style price badge — a slightly-rotated party invite vibe */
+  .price-sticker {
+    @apply inline-flex items-center gap-1 font-display font-bold text-party-navy;
+    background: hsl(var(--accent));
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    box-shadow: 0 6px 16px -6px rgba(255, 201, 60, 0.8);
+  }
+
+  .blob {
+    @apply absolute rounded-full pointer-events-none blur-3xl;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  /* Pause the marquee when a parent is hovered */
+  .marquee-track {
+    animation: marquee 45s linear infinite;
+  }
+  .marquee-pause:hover .marquee-track {
+    animation-play-state: paused;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .marquee-track,
+  .animate-float,
+  .animate-spin-slow,
+  .animate-marquee {
+    animation: none !important;
+  }
+}
