@@ -1,3 +1,5 @@
+import { asset } from "@/lib/asset";
+
 export type PartyAccent = "lime" | "pink" | "sunshine" | "blue" | "grape";
 export type PartyCategory = "Crafty" | "Active" | "Magical" | "Science-y";
 
@@ -47,7 +49,7 @@ export const parties: Party[] = [
     perChild: 25,
     accent: "lime",
     icon: "Droplets",
-    image: "/images/slime-playdough.jpg",
+    image: asset("/images/slime-playdough.jpg"),
     categories: ["Crafty"],
     included: [
       "Three slime recipes mixed by every kid",
@@ -57,7 +59,7 @@ export const parties: Party[] = [
       "Set-up and clean-up handled by us",
     ],
     addons: ["Glitter tattoos", "Extra-special unique slime", "Nail-art stickers"],
-    gallery: ["/images/slime-playdough.jpg", "/images/craft-supplies.jpg", "/images/paint-hands.jpg"],
+    gallery: [asset("/images/slime-playdough.jpg"), asset("/images/craft-supplies.jpg"), asset("/images/paint-hands.jpg")],
     featured: true,
   },
   {
@@ -72,7 +74,7 @@ export const parties: Party[] = [
     perChild: 25,
     accent: "pink",
     icon: "Sparkles",
-    image: "/images/balloons-pinkyellow.jpg",
+    image: asset("/images/balloons-pinkyellow.jpg"),
     categories: ["Magical", "Crafty"],
     included: [
       "Make-your-own unicorn headband",
@@ -82,7 +84,7 @@ export const parties: Party[] = [
       "Set-up and clean-up handled by us",
     ],
     addons: ["Pin-the-horn game", "Hair tinsel / extensions", "Extra glitter tattoos"],
-    gallery: ["/images/balloons-pinkyellow.jpg", "/images/cosmetics-toy.jpg", "/images/confetti.jpg"],
+    gallery: [asset("/images/balloons-pinkyellow.jpg"), asset("/images/cosmetics-toy.jpg"), asset("/images/confetti.jpg")],
     featured: true,
   },
   {
@@ -97,7 +99,7 @@ export const parties: Party[] = [
     perChild: 18,
     accent: "sunshine",
     icon: "Trophy",
-    image: "/images/party-hula.jpg",
+    image: asset("/images/party-hula.jpg"),
     categories: ["Active"],
     included: [
       "A full hour of 60-second challenges",
@@ -107,7 +109,7 @@ export const parties: Party[] = [
       "Set-up and clean-up handled by us",
     ],
     addons: ["Custom challenge themed to the birthday kid", "Prize medals", "Extra games"],
-    gallery: ["/images/party-hula.jpg", "/images/confetti.jpg", "/images/balloons-assorted.jpg"],
+    gallery: [asset("/images/party-hula.jpg"), asset("/images/confetti.jpg"), asset("/images/balloons-assorted.jpg")],
     featured: true,
   },
   {
@@ -122,7 +124,7 @@ export const parties: Party[] = [
     perChild: 25,
     accent: "blue",
     icon: "FlaskConical",
-    image: "/images/craft-supplies.jpg",
+    image: asset("/images/craft-supplies.jpg"),
     categories: ["Science-y"],
     included: [
       "Five hands-on experiments",
@@ -132,7 +134,7 @@ export const parties: Party[] = [
       "Set-up and clean-up handled by us",
     ],
     addons: ["Take-home experiment kit", "Glow-in-the-dark finale", "Extra experiment"],
-    gallery: ["/images/craft-supplies.jpg", "/images/paint-hands.jpg", "/images/cosmetics-toy.jpg"],
+    gallery: [asset("/images/craft-supplies.jpg"), asset("/images/paint-hands.jpg"), asset("/images/cosmetics-toy.jpg")],
     featured: true,
   },
   {
@@ -147,7 +149,7 @@ export const parties: Party[] = [
     perChild: 25,
     accent: "grape",
     icon: "Palette",
-    image: "/images/paint-watercolor.jpg",
+    image: asset("/images/paint-watercolor.jpg"),
     categories: ["Crafty"],
     included: [
       "A canvas and full paint kit per artist",
@@ -157,7 +159,7 @@ export const parties: Party[] = [
       "Set-up and clean-up handled by us",
     ],
     addons: ["Larger canvas", "Custom design for the birthday kid", "Easels"],
-    gallery: ["/images/paint-watercolor.jpg", "/images/paint-body.jpg", "/images/craft-markers.jpg"],
+    gallery: [asset("/images/paint-watercolor.jpg"), asset("/images/paint-body.jpg"), asset("/images/craft-markers.jpg")],
     featured: true,
   },
   {
@@ -172,7 +174,7 @@ export const parties: Party[] = [
     perChild: 25,
     accent: "pink",
     icon: "Gem",
-    image: "/images/cosmetics-toy.jpg",
+    image: asset("/images/cosmetics-toy.jpg"),
     categories: ["Crafty"],
     included: [
       "Beads, charms and stretch cord",
@@ -182,7 +184,7 @@ export const parties: Party[] = [
       "Set-up and clean-up handled by us",
     ],
     addons: ["Charm upgrade pack", "Name beads", "Matching friendship bracelets"],
-    gallery: ["/images/cosmetics-toy.jpg", "/images/craft-markers.jpg", "/images/craft-supplies.jpg"],
+    gallery: [asset("/images/cosmetics-toy.jpg"), asset("/images/craft-markers.jpg"), asset("/images/craft-supplies.jpg")],
     featured: true,
   },
   {
@@ -207,7 +209,7 @@ export const parties: Party[] = [
       "Set-up and clean-up handled by us",
     ],
     addons: ["Prize medals", "Themed game round", "Bubble finale"],
-    gallery: ["/images/party-hula.jpg", "/images/confetti.jpg", "/images/balloons-assorted.jpg"],
+    gallery: [asset("/images/party-hula.jpg"), asset("/images/confetti.jpg"), asset("/images/balloons-assorted.jpg")],
   },
   {
     slug: "diy-cosmetics",
@@ -231,7 +233,7 @@ export const parties: Party[] = [
       "Set-up and clean-up handled by us",
     ],
     addons: ["Bath-bomb add-on", "Custom labels", "Extra take-home jar"],
-    gallery: ["/images/cosmetics-toy.jpg", "/images/paint-hands.jpg", "/images/balloons-pinkyellow.jpg"],
+    gallery: [asset("/images/cosmetics-toy.jpg"), asset("/images/paint-hands.jpg"), asset("/images/balloons-pinkyellow.jpg")],
   },
   {
     slug: "magic-training",
@@ -255,7 +257,7 @@ export const parties: Party[] = [
       "Set-up and clean-up handled by us",
     ],
     addons: ["Magician's cape", "Extra trick kit", "Photo with the magician"],
-    gallery: ["/images/confetti.jpg", "/images/balloons-purple.jpg", "/images/balloons-assorted.jpg"],
+    gallery: [asset("/images/confetti.jpg"), asset("/images/balloons-purple.jpg"), asset("/images/balloons-assorted.jpg")],
   },
   {
     slug: "chocolate-pinata",
@@ -279,7 +281,7 @@ export const parties: Party[] = [
       "Set-up and clean-up handled by us",
     ],
     addons: ["Personalised piñata", "Extra treats", "Photo moment set-up"],
-    gallery: ["/images/confetti.jpg", "/images/balloons-assorted.jpg", "/images/balloons-pinkyellow.jpg"],
+    gallery: [asset("/images/confetti.jpg"), asset("/images/balloons-assorted.jpg"), asset("/images/balloons-pinkyellow.jpg")],
     gtaOnly: true,
   },
   {
@@ -294,7 +296,7 @@ export const parties: Party[] = [
     perChild: 25,
     accent: "blue",
     icon: "Coffee",
-    image: "/images/craft-markers.jpg",
+    image: asset("/images/craft-markers.jpg"),
     categories: ["Crafty"],
     included: [
       "A mug and full paint kit per kid",
@@ -304,7 +306,7 @@ export const parties: Party[] = [
       "Set-up and clean-up handled by us",
     ],
     addons: ["Larger mug", "Matching set", "Custom stencils"],
-    gallery: ["/images/craft-markers.jpg", "/images/paint-watercolor.jpg", "/images/paint-body.jpg"],
+    gallery: [asset("/images/craft-markers.jpg"), asset("/images/paint-watercolor.jpg"), asset("/images/paint-body.jpg")],
   },
   {
     slug: "bedazzling",
@@ -328,7 +330,7 @@ export const parties: Party[] = [
       "Set-up and clean-up handled by us",
     ],
     addons: [],
-    gallery: ["/images/confetti.jpg", "/images/balloons-pinkyellow.jpg", "/images/cosmetics-toy.jpg"],
+    gallery: [asset("/images/confetti.jpg"), asset("/images/balloons-pinkyellow.jpg"), asset("/images/cosmetics-toy.jpg")],
     comingSoon: true,
   },
   {
@@ -353,7 +355,7 @@ export const parties: Party[] = [
       "Set-up and clean-up handled by us",
     ],
     addons: [],
-    gallery: ["/images/balloons-purple.jpg", "/images/confetti.jpg", "/images/balloons-assorted.jpg"],
+    gallery: [asset("/images/balloons-purple.jpg"), asset("/images/confetti.jpg"), asset("/images/balloons-assorted.jpg")],
     comingSoon: true,
   },
 ];

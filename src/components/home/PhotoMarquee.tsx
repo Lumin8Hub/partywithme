@@ -1,14 +1,16 @@
+import { asset } from "@/lib/asset";
+
 const photos = [
-  "/images/slime-playdough.jpg",
-  "/images/craft-markers.jpg",
-  "/images/paint-watercolor.jpg",
-  "/images/party-hula.jpg",
-  "/images/cosmetics-toy.jpg",
-  "/images/paint-body.jpg",
-  "/images/craft-supplies.jpg",
-  "/images/balloons-pinkyellow.jpg",
-  "/images/paint-hands.jpg",
-  "/images/confetti.jpg",
+  asset("/images/slime-playdough.jpg"),
+  asset("/images/craft-markers.jpg"),
+  asset("/images/paint-watercolor.jpg"),
+  asset("/images/party-hula.jpg"),
+  asset("/images/cosmetics-toy.jpg"),
+  asset("/images/paint-body.jpg"),
+  asset("/images/craft-supplies.jpg"),
+  asset("/images/balloons-pinkyellow.jpg"),
+  asset("/images/paint-hands.jpg"),
+  asset("/images/confetti.jpg"),
 ];
 
 const PhotoMarquee = () => (
