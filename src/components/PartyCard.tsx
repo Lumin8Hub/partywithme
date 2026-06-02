@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import * as Icons from "lucide-react";
-import { ArrowRight, MapPin, Clock } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
 import type { Party, PartyAccent } from "@/data/parties";
 
 const accentStyles: Record<
@@ -70,14 +70,9 @@ const PartyCard = ({ party }: { party: Party }) => {
 
         {/* Tags */}
         <div className="absolute right-3 top-3 flex flex-col items-end gap-1.5">
-          {party.comingSoon && (
-            <span className="rounded-full bg-party-grape px-2.5 py-1 text-xs font-bold text-white shadow-soft">
-              Coming soon
-            </span>
-          )}
-          {party.gtaOnly && (
-            <span className="inline-flex items-center gap-1 rounded-full bg-white/95 px-2.5 py-1 text-xs font-bold text-party-navy shadow-soft">
-              <MapPin className="h-3 w-3" /> GTA only
+          {party.custom && (
+            <span className="rounded-full bg-party-sunshine px-2.5 py-1 text-xs font-bold text-party-navy shadow-soft">
+              Seasonal
             </span>
           )}
         </div>

@@ -39,13 +39,13 @@ const PartyCarousel = () => {
   }, [emblaApi, shouldReduceMotion]);
 
   return (
-    <section className="bg-party-paper py-16 md:py-24">
+    <section className="bg-party-sky py-16 md:py-24">
       <div className="container">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <SectionHeading
             align="left"
             eyebrow="Pick your party"
-            title="12 parties kids actually ask for"
+            title="Parties kids actually ask for"
             subtitle="Each one is fully led, hands-on and ends with something to take home. Swipe through a few favourites."
           />
           <div className="hidden gap-2 md:flex">
@@ -103,7 +103,7 @@ const PartyCarousel = () => {
             to="/parties"
             className="inline-flex items-center gap-1 font-display font-semibold text-party-blue hover:underline"
           >
-            See all 12 parties
+            See all parties
             <ArrowRight className="h-4 w-4" />
           </Link>
         </SectionReveal>

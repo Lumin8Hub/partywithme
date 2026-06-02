@@ -6,7 +6,7 @@ import InclusivityCallout from "@/components/InclusivityCallout";
 import IncludedBlock from "@/components/IncludedBlock";
 import HowItWorksPreview from "@/components/home/HowItWorksPreview";
 import SocialProof from "@/components/home/SocialProof";
-import RegionsCue from "@/components/home/RegionsCue";
+import BirthdayGiftCallout from "@/components/BirthdayGiftCallout";
 import FinalCTA from "@/components/FinalCTA";
 
 const Home = () => (
@@ -19,7 +19,7 @@ const Home = () => (
     <IncludedBlock />
     <HowItWorksPreview />
     <SocialProof />
-    <RegionsCue />
+    <BirthdayGiftCallout />
     <FinalCTA />
   </>
 );

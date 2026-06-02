@@ -64,6 +64,7 @@ export default {
           grape: "#8A5CF6",
           navy: "#1A2238",
           paper: "#FFF9F2",
+          sky: "#EAF3FB",
           cloud: "#FFFFFF",
         },
       },

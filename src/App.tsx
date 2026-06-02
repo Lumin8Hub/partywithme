@@ -8,7 +8,8 @@ import Home from "./pages/Home.tsx";
 import Parties from "./pages/Parties.tsx";
 import PartyDetail from "./pages/PartyDetail.tsx";
 import HowItWorks from "./pages/HowItWorks.tsx";
-import WhereWeAre from "./pages/WhereWeAre.tsx";
+import Camp from "./pages/Camp.tsx";
+import Events from "./pages/Events.tsx";
 import Gallery from "./pages/Gallery.tsx";
 import Reviews from "./pages/Reviews.tsx";
 import About from "./pages/About.tsx";
@@ -32,7 +33,8 @@ const App = () => (
             <Route path="/parties" element={<Parties />} />
             <Route path="/parties/:slug" element={<PartyDetail />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
-            <Route path="/where-we-are" element={<WhereWeAre />} />
+            <Route path="/camp" element={<Camp />} />
+            <Route path="/events" element={<Events />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/about" element={<About />} />

@@ -1,13 +1,12 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import * as Icons from "lucide-react";
-import { Check, ArrowLeft, MapPin, Clock, Users, PartyPopper, Plus } from "lucide-react";
+import { Check, ArrowLeft, Clock, Users, PartyPopper, Plus } from "lucide-react";
 import PartyButton from "@/components/PartyButton";
 import PartyCard from "@/components/PartyCard";
 import SectionReveal from "@/components/animations/SectionReveal";
 import { FloatingConfetti } from "@/components/decor/Decor";
-import { partyBySlug, parties, ACCENT_HEX } from "@/data/parties";
+import { partyBySlug, listedParties, ACCENT_HEX } from "@/data/parties";
 import { included } from "@/data/site";
-import { travelLine } from "@/data/regions";
 
 const PartyDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -18,7 +17,7 @@ const PartyDetail = () => {
   const hex = ACCENT_HEX[party.accent];
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const Icon = (Icons as any)[party.icon] ?? Icons.Sparkles;
-  const related = parties.filter((p) => p.slug !== party.slug && !p.comingSoon).slice(0, 3);
+  const related = listedParties.filter((p) => p.slug !== party.slug && !p.custom).slice(0, 3);
 
   return (
     <>
@@ -41,9 +40,9 @@ const PartyDetail = () => {
               >
                 <Icon className="h-4 w-4" /> {party.categories.join(" · ")}
               </span>
-              {party.gtaOnly && (
+              {party.custom && (
                 <span className="inline-flex items-center gap-1 rounded-full bg-white px-3 py-1 text-sm font-bold text-party-navy shadow-soft">
-                  <MapPin className="h-3.5 w-3.5" /> GTA only
+                  Seasonal · Contact for pricing
                 </span>
               )}
               {party.comingSoon && (
@@ -128,7 +127,7 @@ const PartyDetail = () => {
                   {party.addons.map((addon) => (
                     <span
                       key={addon}
-                      className="inline-flex items-center gap-1.5 rounded-full border border-border bg-party-paper px-4 py-2 text-sm font-medium text-party-navy"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white px-4 py-2 text-sm font-medium text-party-navy"
                     >
                       <Plus className="h-3.5 w-3.5" style={{ color: hex }} /> {addon}
                     </span>
@@ -170,13 +169,13 @@ const PartyDetail = () => {
                   </div>
 
                   {party.perChild && (
-                    <p className="mt-4 rounded-2xl bg-party-paper px-4 py-3 text-sm text-muted-foreground">
+                    <p className="mt-4 rounded-2xl bg-party-sky px-4 py-3 text-sm text-muted-foreground">
                       Adding more friends? Just{" "}
                       <span className="font-semibold text-party-navy">${party.perChild}/extra child</span>.
                     </p>
                   )}
 
-                  <p className="mt-3 text-xs leading-relaxed text-muted-foreground">{travelLine}</p>
+                  <p className="mt-3 text-xs leading-relaxed text-muted-foreground">A small travel fee may apply — always confirmed with your quote.</p>
 
                   <PartyButton to="/book" variant="primary" className="mt-5 w-full">
                     <PartyPopper className="h-5 w-5" />
@@ -196,7 +195,7 @@ const PartyDetail = () => {
       </section>
 
       {/* Related */}
-      <section className="bg-party-paper py-14 md:py-20">
+      <section className="bg-party-sky py-14 md:py-20">
         <div className="container">
           <h2 className="text-center font-display text-2xl font-bold text-party-navy md:text-3xl">
             More parties to love
