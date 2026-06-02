@@ -34,6 +34,11 @@ jobs:
         run: npm run build
         env:
           GITHUB_ACTIONS: "true"
+          # Pages serves this project at https://<user>.github.io/partywithme/,
+          # so assets and the router basename must be prefixed with /partywithme/.
+          # When the custom domain (partywithme.fun) is live, remove this so the
+          # build targets the domain root again.
+          BASE_PATH: "/partywithme/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

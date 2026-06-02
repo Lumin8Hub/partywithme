@@ -1,3 +1,5 @@
+import { asset } from "@/lib/asset";
+
 export interface Region {
   id: "toronto" | "boston";
   city: string;
@@ -19,7 +21,7 @@ export const regions: Region[] = [
     blurb:
       "We bring the party across the GTA — homes, condos and community spaces, all around Vaughan.",
     note: "Chocolate Piñata available here!",
-    image: "/images/toronto.jpg",
+    image: asset("/images/toronto.jpg"),
   },
   {
     id: "boston",
@@ -29,7 +31,7 @@ export const regions: Region[] = [
     radius: "~15 mi",
     blurb:
       "From Back Bay to the 'burbs — we cover Greater Boston, based out of Needham.",
-    image: "/images/boston.jpg",
+    image: asset("/images/boston.jpg"),
   },
 ];
 

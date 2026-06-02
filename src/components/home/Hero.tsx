@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion
 import { Star, Sparkles } from "lucide-react";
 import PartyButton from "@/components/PartyButton";
 import { FloatingConfetti } from "@/components/decor/Decor";
+import { asset } from "@/lib/asset";
 import { site } from "@/data/site";
 
 const Hero = () => {
@@ -62,7 +63,7 @@ const Hero = () => {
           <div className="absolute -inset-6 -z-10 rounded-[3rem] bg-party-blue" />
           <div className="relative">
             <img
-              src="/images/craft-markers.jpg"
+              src={asset("/images/craft-markers.jpg")}
               alt="Kids happily crafting together at a party"
               className="aspect-[4/5] w-full rounded-[2rem] object-cover shadow-lift"
             />

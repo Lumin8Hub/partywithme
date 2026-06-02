@@ -2,7 +2,7 @@
 
 Marketing website for **Party With Me** — fully-led, mess-free kids' birthday parties brought to your space across the **Greater Toronto Area** and **Greater Boston**. Slime, unicorns, science, games and more for ages 5–12.
 
-🎉 **Live site:** https://partywithme.fun
+🎉 **Live site:** https://lumin8hub.github.io/partywithme/ (custom domain `partywithme.fun` pending DNS)
 
 ## What's inside (Phase 1)
 
@@ -49,4 +49,14 @@ When set, the form quietly `POST`s the submission JSON to that endpoint and stil
 
 ## Deployment
 
-Pushing to `main` builds the site and deploys it to **GitHub Pages** via the workflow in `.github/workflows/deploy.yml`. The custom domain is configured through `public/CNAME` (`partywithme.fun`).
+Pushing to `main` builds the site and deploys it to **GitHub Pages** via the workflow in `.github/workflows/deploy.yml`.
+
+The site currently publishes to the project path **https://lumin8hub.github.io/partywithme/**. The build base path is set with `BASE_PATH: "/partywithme/"` in the deploy workflow; Vite uses it for asset URLs and React Router derives its `basename` from it (`import.meta.env.BASE_URL`). A `postbuild` step copies `index.html` to `404.html` so client-side routes resolve on deep links and refreshes.
+
+### Switching to the custom domain (`partywithme.fun`)
+
+When the domain's DNS is pointed at GitHub Pages:
+
+1. Remove the `BASE_PATH` env var from the `Build` step in `.github/workflows/deploy.yml` (so the build targets the domain root, `base: "/"`).
+2. Re-add `public/CNAME` containing `partywithme.fun`.
+3. Set the custom domain under **Settings → Pages** and let GitHub verify it.
