@@ -2,7 +2,7 @@ import { FloatingConfetti } from "@/components/decor/Decor";
 import PartyButton from "@/components/PartyButton";
 
 const NotFound = () => (
-  <section className="relative overflow-hidden bg-party-paper">
+  <section className="relative overflow-hidden bg-party-sky">
     <FloatingConfetti count={12} />
     <div className="container relative flex min-h-[70vh] flex-col items-center justify-center py-20 text-center">
       <p className="font-display text-7xl font-bold text-party-blue md:text-8xl">404</p>

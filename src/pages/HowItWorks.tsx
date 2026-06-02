@@ -49,7 +49,7 @@ const HowItWorks = () => (
       </div>
     </section>
 
-    <section className="bg-party-paper py-14 md:py-20">
+    <section className="bg-party-sky py-14 md:py-20">
       <div className="container">
         <SectionHeading
           eyebrow="The reassuring bits"

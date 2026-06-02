@@ -5,13 +5,11 @@ import CountUp from "@/components/CountUp";
 import TestimonialCard from "@/components/TestimonialCard";
 import SectionReveal from "@/components/animations/SectionReveal";
 import FinalCTA from "@/components/FinalCTA";
-import { orderReviewsByRegion, reviewStats } from "@/data/reviews";
-import { useRegion } from "@/context/RegionContext";
+import { reviews, reviewStats } from "@/data/reviews";
 import { site } from "@/data/site";
 
 const Reviews = () => {
-  const { region } = useRegion();
-  const ordered = orderReviewsByRegion(region);
+  const ordered = reviews;
 
   return (
     <>
@@ -32,7 +30,7 @@ const Reviews = () => {
 
       <section className="bg-white py-12 md:py-16">
         <div className="container">
-          <div className="mx-auto grid max-w-3xl grid-cols-3 gap-4 rounded-3xl bg-party-paper p-8 md:gap-8">
+          <div className="mx-auto grid max-w-3xl grid-cols-3 gap-4 rounded-3xl bg-party-sky p-8 md:gap-8">
             <div className="text-center">
               <div className="flex justify-center gap-0.5">
                 {Array.from({ length: 5 }).map((_, i) => (

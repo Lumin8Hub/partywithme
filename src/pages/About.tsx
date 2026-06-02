@@ -82,7 +82,7 @@ const About = () => (
       </div>
     </section>
 
-    <section className="bg-party-paper py-14 md:py-20">
+    <section className="bg-party-sky py-14 md:py-20">
       <div className="container">
         <SectionHeading eyebrow="What we believe" title="The promise behind every party" />
         <div className="mt-12 grid gap-6 md:grid-cols-3">

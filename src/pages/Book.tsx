@@ -8,7 +8,7 @@ import PageHero from "@/components/PageHero";
 import PartyButton from "@/components/PartyButton";
 import ConfettiBurst from "@/components/decor/ConfettiBurst";
 import { Label } from "@/components/ui/label";
-import { parties } from "@/data/parties";
+import { listedParties } from "@/data/parties";
 import { globalAddons, timeWindows, sizeOptions } from "@/data/addons";
 import { site } from "@/data/site";
 
@@ -92,7 +92,7 @@ const Book = () => {
 
   if (submitted) {
     return (
-      <section className="relative overflow-hidden bg-party-paper">
+      <section className="relative overflow-hidden bg-party-sky">
         <ConfettiBurst />
         <div className="container relative flex min-h-[70vh] flex-col items-center justify-center py-20 text-center">
           <span className="grid h-20 w-20 place-items-center rounded-full bg-party-lime/20">
@@ -148,13 +148,11 @@ const Book = () => {
               <Field label="Party theme" error={errors.theme?.message}>
                 <select {...register("theme")} className={fieldBase}>
                   <option value="">Choose a theme…</option>
-                  {parties
-                    .filter((p) => !p.comingSoon)
-                    .map((p) => (
-                      <option key={p.slug} value={p.name}>
-                        {p.name}
-                      </option>
-                    ))}
+                  {listedParties.map((p) => (
+                    <option key={p.slug} value={p.name}>
+                      {p.name}{p.price ? ` — from $${p.price}` : ""}
+                    </option>
+                  ))}
                   <option value="Custom / not sure yet">Custom / not sure yet</option>
                 </select>
               </Field>

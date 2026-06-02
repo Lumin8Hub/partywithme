@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { Instagram, Facebook, MessageCircle, Mail } from "lucide-react";
 import Logo from "./Logo";
 import { site, navLinks } from "@/data/site";
-import { regions } from "@/data/regions";
 
 const moreLinks = [
   { label: "All Parties", to: "/parties" },
@@ -13,7 +12,7 @@ const moreLinks = [
 ];
 
 const Footer = () => (
-  <footer className="border-t border-border bg-party-paper">
+  <footer className="border-t border-border bg-party-sky">
     <div className="container py-14 md:py-16">
       <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
         <div>
@@ -81,15 +80,11 @@ const Footer = () => (
         </div>
 
         <div>
-          <h4 className="font-display font-semibold text-party-navy">Where we party</h4>
+          <h4 className="font-display font-semibold text-party-navy">Get in touch</h4>
           <ul className="mt-4 space-y-3">
-            {regions.map((r) => (
-              <li key={r.id} className="text-sm text-muted-foreground">
-                <span className="font-semibold text-party-navy">{r.area}</span>
-                <br />
-                Based in {r.base} · {r.radius}
-              </li>
-            ))}
+            <li className="text-sm text-muted-foreground">
+              Serving the Greater Toronto &amp; Greater Boston areas.
+            </li>
             <li className="text-sm">
               <a href={`mailto:${site.email}`} className="font-semibold text-party-blue hover:underline">
                 {site.email}
@@ -105,7 +100,7 @@ const Footer = () => (
           <Link to="/privacy" className="transition-colors hover:text-party-blue">
             Privacy Policy
           </Link>
-          <span>Made with confetti & care.</span>
+          <span>Made with confetti &amp; care.</span>
         </div>
       </div>
     </div>

@@ -2,12 +2,10 @@ import SectionHeading from "@/components/SectionHeading";
 import SectionReveal from "@/components/animations/SectionReveal";
 import CountUp from "@/components/CountUp";
 import TestimonialCard from "@/components/TestimonialCard";
-import { orderReviewsByRegion, reviewStats } from "@/data/reviews";
-import { useRegion } from "@/context/RegionContext";
+import { reviews, reviewStats } from "@/data/reviews";
 
 const SocialProof = () => {
-  const { region } = useRegion();
-  const ordered = orderReviewsByRegion(region).slice(0, 3);
+  const ordered = reviews.slice(0, 3);
 
   const stats = [
     { value: reviewStats.fiveStarReviews, suffix: "+", label: "Five-star reviews" },
