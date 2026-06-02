@@ -1,5 +1,9 @@
 export type PartyAccent = "lime" | "pink" | "sunshine" | "blue" | "grape";
-export type PartyCategory = "Crafty" | "Active" | "Magical" | "Science-y";
+export type PartyCategory =
+  | "Arts & Crafts"
+  | "Slime & Science"
+  | "Games & Active"
+  | "Magic & Imagination";
 
 export interface Party {
   slug: string;
@@ -21,6 +25,8 @@ export interface Party {
   gallery: string[];
   gtaOnly?: boolean;
   comingSoon?: boolean;
+  /** Custom / seasonal theme — priced on request, shown in its own row. */
+  custom?: boolean;
   /** Highlighted on the homepage carousel + parties grid lead. */
   featured?: boolean;
 }
@@ -48,7 +54,7 @@ export const parties: Party[] = [
     accent: "lime",
     icon: "Droplets",
     image: "/images/slime-playdough.jpg",
-    categories: ["Crafty"],
+    categories: ["Slime & Science"],
     included: [
       "Three slime recipes mixed by every kid",
       "Charms, scents, glitter and mix-ins",
@@ -73,7 +79,7 @@ export const parties: Party[] = [
     accent: "pink",
     icon: "Sparkles",
     image: "/images/balloons-pinkyellow.jpg",
-    categories: ["Magical", "Crafty"],
+    categories: ["Magic & Imagination"],
     included: [
       "Make-your-own unicorn headband",
       "Shimmering unicorn slime",

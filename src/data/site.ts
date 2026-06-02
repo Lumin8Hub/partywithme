@@ -1,8 +1,8 @@
 export const site = {
   name: "Party With Me",
-  tagline: "We bring the party to you.",
+  tagline: "Bringing the FUN to YOU!",
   email: "info@partywithme.fun",
-  priceFrom: 320,
+  priceFrom: 300,
   social: {
     instagram: "https://instagram.com/partywithme",
     facebook: "https://facebook.com/partywithme",
@@ -17,8 +17,9 @@ export const site = {
 
 export const navLinks = [
   { label: "Parties", to: "/parties" },
+  { label: "Camp", to: "/camp" },
+  { label: "Events", to: "/events" },
   { label: "How It Works", to: "/how-it-works" },
-  { label: "Where We Are", to: "/where-we-are" },
   { label: "Reviews", to: "/reviews" },
 ];
 
