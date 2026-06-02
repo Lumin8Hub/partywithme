@@ -33,7 +33,9 @@ const Navbar = () => {
       }`}
     >
       <nav className="container flex h-16 items-center justify-between gap-4 md:h-[72px]">
-        <Logo />
+        <div className="rounded-2xl bg-party-blue px-3 py-1.5 shadow-soft">
+          <Logo />
+        </div>
 
         <div className="hidden items-center gap-7 lg:flex">
           {navLinks.map((l) => (
