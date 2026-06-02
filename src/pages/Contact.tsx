@@ -18,7 +18,7 @@ const channels = [
     color: "text-party-pink",
     bg: "bg-party-pink/10",
     label: "Instagram",
-    value: "@partywithme",
+    value: "@partywithmefun",
     href: site.social.instagram,
   },
   {

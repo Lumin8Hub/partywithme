@@ -4,9 +4,9 @@ export const site = {
   email: "info@partywithme.fun",
   priceFrom: 300,
   social: {
-    instagram: "https://instagram.com/partywithme",
-    facebook: "https://facebook.com/partywithme",
-    messenger: "https://m.me/partywithme",
+    instagram: "https://instagram.com/partywithmefun",
+    facebook: "https://www.facebook.com/partywithmefun",
+    messenger: "https://m.me/partywithmefun",
     tiktok: "https://tiktok.com/@partywithme",
   },
   joinTeam: {

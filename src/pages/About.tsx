@@ -1,5 +1,6 @@
 import { Heart, Sparkles, ShieldCheck } from "lucide-react";
 import PageHero from "@/components/PageHero";
+import { asset } from "@/lib/asset";
 import PartyButton from "@/components/PartyButton";
 import SectionHeading from "@/components/SectionHeading";
 import SectionReveal from "@/components/animations/SectionReveal";
@@ -31,10 +32,10 @@ const values = [
 ];
 
 const leaderPhotos = [
-  "/images/craft-markers.jpg",
-  "/images/slime-playdough.jpg",
-  "/images/paint-hands.jpg",
-  "/images/party-hula.jpg",
+  asset("/images/craft-markers.jpg"),
+  asset("/images/slime-playdough.jpg"),
+  asset("/images/paint-hands.jpg"),
+  asset("/images/party-hula.jpg"),
 ];
 
 const About = () => (
@@ -50,7 +51,7 @@ const About = () => (
         <SectionReveal>
           <div className="relative mx-auto w-full max-w-md">
             <img
-              src="/images/craft-supplies.jpg"
+              src={asset("/images/craft-supplies.jpg")}
               alt="Party With Me supplies ready to go"
               className="aspect-[4/5] w-full rounded-[2rem] object-cover shadow-lift"
             />
