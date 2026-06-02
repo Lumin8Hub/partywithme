@@ -41,7 +41,7 @@ const FAQ = () => (
         </SectionReveal>
 
         <SectionReveal className="mt-12 text-center">
-          <div className="rounded-3xl bg-party-paper p-8">
+          <div className="rounded-3xl bg-party-sky p-8">
             <h3 className="font-display text-xl font-bold text-party-navy">Still have a question?</h3>
             <p className="mt-2 text-muted-foreground">We're happy to help — usually within a day.</p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">

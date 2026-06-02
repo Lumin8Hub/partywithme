@@ -1,56 +1,65 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
+import { MessageCircle } from "lucide-react";
 import PageHero from "@/components/PageHero";
+import CategoryCarousel from "@/components/parties/CategoryCarousel";
 import PartyCard from "@/components/PartyCard";
 import SectionReveal from "@/components/animations/SectionReveal";
 import IncludedBlock from "@/components/IncludedBlock";
 import InclusivityCallout from "@/components/InclusivityCallout";
 import FinalCTA from "@/components/FinalCTA";
-import { parties, partyCategories, type PartyCategory } from "@/data/parties";
-
-type Filter = "All" | PartyCategory;
+import { listedParties, customParties, partyCategories } from "@/data/parties";
+import { site } from "@/data/site";
 
 const Parties = () => {
-  const [filter, setFilter] = useState<Filter>("All");
-  const filters: Filter[] = ["All", ...partyCategories];
-
-  const visible = parties.filter((p) => filter === "All" || p.categories.includes(filter));
-
   return (
     <>
       <PageHero
         eyebrow="The party menu"
         title="Find the perfect party"
-        subtitle="Twelve fully-led themes for kids 5–12 — crafty, active, magical and science-y. Every one ends with something to take home."
+        subtitle="Fully-led themes for kids 5–12 — crafty, active, magical and science-y. Every one ends with something to take home."
       />
 
-      <section className="bg-white py-12 md:py-16">
+      <section className="bg-white py-14 md:py-20">
         <div className="container">
-          <div className="flex flex-wrap items-center justify-center gap-2.5">
-            {filters.map((f) => (
-              <button
-                key={f}
-                onClick={() => setFilter(f)}
-                className={`rounded-full px-5 py-2 font-display text-sm font-semibold transition-all ${
-                  filter === f
-                    ? "bg-party-blue text-white shadow-soft"
-                    : "border border-border bg-white text-party-navy hover:border-party-blue/50"
-                }`}
-              >
-                {f}
-              </button>
-            ))}
-          </div>
+          {partyCategories.map((category) => {
+            const categoryParties = listedParties.filter((p) => p.categories.includes(category));
+            if (categoryParties.length === 0) return null;
+            return (
+              <CategoryCarousel key={category} title={category} parties={categoryParties} />
+            );
+          })}
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {visible.map((party, i) => (
-              <SectionReveal key={party.slug} delay={(i % 3) * 0.08}>
-                <PartyCard party={party} />
-              </SectionReveal>
-            ))}
-          </div>
-
-          {visible.length === 0 && (
-            <p className="mt-12 text-center text-muted-foreground">No parties in this category yet.</p>
+          {/* Custom & Seasonal */}
+          {customParties.length > 0 && (
+            <SectionReveal>
+              <div className="mt-4 rounded-[2rem] bg-party-sky px-6 py-10 md:px-10">
+                <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <p className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-party-blue">
+                      Custom &amp; Seasonal
+                    </p>
+                    <h2 className="mt-1 font-display text-2xl font-bold text-party-navy md:text-3xl">
+                      The hottest trend — just ask
+                    </h2>
+                    <p className="mt-2 max-w-xl text-muted-foreground">
+                      We'll get it done! These themes come and go fast. Contact us for current availability and pricing.
+                    </p>
+                  </div>
+                  <Link
+                    to="/contact"
+                    className="inline-flex shrink-0 items-center gap-2 rounded-full bg-party-blue px-5 py-2.5 font-display text-sm font-semibold text-white transition-colors hover:bg-party-blue/90"
+                  >
+                    <MessageCircle className="h-4 w-4" />
+                    Contact for pricing
+                  </Link>
+                </div>
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  {customParties.map((party) => (
+                    <PartyCard key={party.slug} party={party} />
+                  ))}
+                </div>
+              </div>
+            </SectionReveal>
           )}
         </div>
       </section>

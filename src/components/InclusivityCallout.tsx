@@ -1,7 +1,7 @@
 import SectionReveal from "./animations/SectionReveal";
 
 const InclusivityCallout = () => (
-  <section className="bg-party-paper py-12 md:py-16">
+  <section className="bg-party-sky py-12 md:py-16">
     <div className="container">
       <SectionReveal>
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-3xl border-2 border-dashed border-party-lime/50 bg-white px-6 py-10 text-center">

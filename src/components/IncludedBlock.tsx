@@ -1,7 +1,6 @@
 import { Users, Clock, UserCheck, Gift } from "lucide-react";
 import SectionReveal from "./animations/SectionReveal";
 import { site, included } from "@/data/site";
-import { travelLine } from "@/data/regions";
 
 const items = [
   { icon: Users, label: `${included.kids} kids`, sub: "Easy to add more friends" },
@@ -17,14 +16,16 @@ const IncludedBlock = () => (
         <div className="overflow-hidden rounded-[2rem] bg-party-navy px-6 py-12 text-white md:px-12 md:py-14">
           <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.3fr]">
             <div>
-              <p className="eyebrow !text-party-sunshine">Simple pricing</p>
+              <p className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-party-sunshine">Simple pricing</p>
               <h2 className="mt-3 font-display text-3xl font-bold md:text-4xl">
                 What you get at <span className="text-party-sunshine">${site.priceFrom}</span>
               </h2>
               <p className="mt-4 text-white/80">
                 One clear price for a party that's fully handled — start to finish, set-up to clean-up.
               </p>
-              <p className="mt-4 text-sm text-white/65">{travelLine}</p>
+              <p className="mt-4 text-sm text-white/65">
+                A small travel fee may apply based on distance — we'll always confirm it with your quote.
+              </p>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">

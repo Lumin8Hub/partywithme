@@ -1,44 +1,9 @@
 import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { Menu, X, MapPin, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
 import PartyButton from "./PartyButton";
 import { navLinks } from "@/data/site";
-import { useRegion, regionLabel, type RegionChoice } from "@/context/RegionContext";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-
-const RegionPicker = ({ compact = false }: { compact?: boolean }) => {
-  const { region, setRegion } = useRegion();
-  const options: RegionChoice[] = ["both", "toronto", "boston"];
-  return (
-    <DropdownMenu>
-      <DropdownMenuTrigger
-        className="inline-flex items-center gap-1.5 rounded-full border border-border bg-white px-3 py-1.5 text-sm font-semibold text-party-navy transition-colors hover:border-party-blue/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-party-blue/30"
-        aria-label="Choose your region"
-      >
-        <MapPin className="h-4 w-4 text-party-blue" />
-        {regionLabel[region]}
-        <ChevronDown className="h-3.5 w-3.5 text-muted-foreground" />
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align={compact ? "start" : "end"} className="rounded-2xl">
-        {options.map((opt) => (
-          <DropdownMenuItem
-            key={opt}
-            onClick={() => setRegion(opt)}
-            className="cursor-pointer rounded-xl font-medium"
-          >
-            {regionLabel[opt]}
-          </DropdownMenuItem>
-        ))}
-      </DropdownMenuContent>
-    </DropdownMenu>
-  );
-};
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -79,7 +44,6 @@ const Navbar = () => {
         </div>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <RegionPicker />
           <PartyButton to="/book" variant="primary" size="md">
             Book My Party
           </PartyButton>
@@ -105,16 +69,15 @@ const Navbar = () => {
                 to={l.to}
                 className={({ isActive }) =>
                   `rounded-xl px-3 py-3 font-display font-medium ${
-                    isActive ? "bg-party-paper text-party-blue" : "text-party-navy"
+                    isActive ? "bg-party-sky text-party-blue" : "text-party-navy"
                   }`
                 }
               >
                 {l.label}
               </NavLink>
             ))}
-            <div className="mt-3 flex items-center justify-between gap-3">
-              <RegionPicker compact />
-              <PartyButton to="/book" variant="primary" className="flex-1">
+            <div className="mt-3">
+              <PartyButton to="/book" variant="primary" className="w-full">
                 Book My Party
               </PartyButton>
             </div>
